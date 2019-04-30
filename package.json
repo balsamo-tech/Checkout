@@ -16,7 +16,7 @@
     "tslint": "tslint --project ./tsconfig.tslint.json --format codeFrame",
     "prettier": "prettier --config ./.prettierrc --loglevel warn --write \"*(test-app|packages)/**/*.{js,jsx,ts,tsx}\"",
     "prettier-check": "prettier --config ./.prettierrc --list-different \"*(test-app|packages)/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "yarn prettier-check && yarn tslint && yarn tsc && yarn test"
+    "lint": "yarn prettier-check && yarn tslint && yarn tsc"
   },
   "husky": {
     "hooks": {
