@@ -1,11 +1,45 @@
 {
-  "name": "Checkout",
+  "name": "checkout",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "version": "0.0.1",
   "main": "index.js",
   "author": "Marcos Ramos <marcos.zion.crew@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "scripts": {
+    "test": "yarn test:front-end",
+    "tsc": "yarn workspace front-end tsc",
+    "test:front-end": "yarn workspace front-end test",
+    "tslint": "tslint --project ./tsconfig.tslint.json --format codeFrame",
+    "prettier": "prettier --config ./.prettierrc --loglevel warn --write \"*(test-app|packages)/**/*.{js,jsx,ts,tsx}\"",
+    "prettier-check": "prettier --config ./.prettierrc --list-different \"*(test-app|packages)/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "yarn prettier-check && yarn tslint && yarn tsc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/node": "^11.13.8",
+    "@types/react": "^16.8.15",
+    "@types/react-test-renderer": "^16.8.1",
+    "babel-jest": "^24.7.1",
+    "babel-preset-react": "^6.24.1",
+    "husky": "^2.1.0",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0",
+    "react-test-renderer": "^16.8.6",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.4.5"
   }
 }
