@@ -1,11 +1,11 @@
 {
   "name": "Checkout",
   "private": true,
+  "workspaces": ["packages/*"],
   "version": "0.0.1",
   "main": "index.js",
   "author": "Marcos Ramos <marcos.zion.crew@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@ui/button": "1.0.0"
   }
 }
