@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ButtonPrimary } from '../../components';
+import { ButtonPrimary } from '@balsamo/components';
 
 // named export
 export const LogIn = () => {
